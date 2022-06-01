@@ -2,7 +2,7 @@ import React, { useState, useEffect, ChangeEvent } from 'react';
 import { Grid, Box, Typography, TextField, Button } from '@material-ui/core';
 import { Link, useNavigate } from 'react-router-dom';
 import useLocalStorage from 'react-use-localstorage';
-import { api } from '../../services/Service';
+import { api, login } from '../../services/Service';
 import UserLogin from '../../models/UserLogin';
 import './Login.css';
 
@@ -12,8 +12,10 @@ function Login() {
     const [userLogin, setUserLogin] = useState<UserLogin>(
         {
             id: 0,
+            nome: '',
             usuario: '',
             senha: '',
+            foto: '',
             token: ''
         }
         )
@@ -35,10 +37,10 @@ function Login() {
         async function onSubmit(e: ChangeEvent<HTMLFormElement>){
             e.preventDefault();
             try{
-                const resposta = await api.post(`/usuarios/logar`, userLogin)
-                setToken(resposta.data.token)
-
+                //O token é gravado no locaStorange
+                await login(`/usuarios/logar`, userLogin, setToken)
                 alert('Usuário logado com sucesso!');
+                
             }catch(error){
                 alert('Dados do usuário inconsistentes. Erro ao logar!');
             }
@@ -62,7 +64,7 @@ function Login() {
                         <Box marginRight={1}>
                             <Typography variant='subtitle1' gutterBottom align='center'>Não tem uma conta?</Typography>
                         </Box>
-                        <Link to='/cadastrousuario'>
+                        <Link to='/cadastro'>
                             <Typography variant='subtitle1' gutterBottom align='center' className='textos1'>Cadastre-se</Typography>
                         </Link>
                             
