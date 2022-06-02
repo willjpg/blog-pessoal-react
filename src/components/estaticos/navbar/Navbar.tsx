@@ -1,5 +1,6 @@
 import React from 'react';
 import { AppBar, Toolbar, Typography, Box } from '@material-ui/core';
+import { Link } from 'react-router-dom'
 function Navbar() {
     return (
         <>
@@ -23,9 +24,9 @@ function Navbar() {
                             </Typography>
                         </Box>
                         <Box mx={1} style={{ cursor: "pointer" }}>
-                            <Typography variant="h6" color="inherit">
-                                temas
-                            </Typography>
+                        <Link to='/temas' className='text-decorator-none'>
+                            <Typography variant="h6" color="inherit">temas</Typography>
+                            </Link>
                         </Box>
                         <Box mx={1} style={{ cursor: "pointer" }}>
                             <Typography variant="h6" color="inherit">
