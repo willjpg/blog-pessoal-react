@@ -1,41 +1,67 @@
-import React from 'react';
-import { AppBar, Toolbar, Typography, Box } from '@material-ui/core';
-import { Link } from 'react-router-dom'
-function Navbar() {
+import React from 'react'
+import { AppBar, Box, Toolbar, Typography } from '@material-ui/core'
+import { Link, useNavigate } from 'react-router-dom'
+import useLocalStorage from 'react-use-localstorage'
+import './Navbar.css'
+
+function NavBar() {
+
+    let navigate = useNavigate()
+
+    const [token, setToken] = useLocalStorage('token')
+
+    function goLogout() {
+        setToken('')//transforma o token em vazio quando deslogar
+        alert("Usuário deslogado")
+        navigate("/login")
+    }
+
     return (
         <>
             <AppBar position="static">
                 <Toolbar variant="dense">
-                    <Box style={{ cursor: "pointer" }} >
+                    <Box className='cursor'>
                         <Typography variant="h5" color="inherit">
                             BlogPessoal
                         </Typography>
                     </Box>
 
                     <Box display="flex" justifyContent="start">
-                        <Box mx={1} style={{ cursor: "pointer" }}>
+                        <Link to="/home" className="text-decorator-none">
+                            <Box mx={1} className='cursor'>
+                                <Typography variant="h6" color="inherit">
+                                    Home
+                                </Typography>
+                            </Box>
+                        </Link>
+
+                        <Link to="/posts" className="text-decorator-none">
+                            <Box mx={1} className='cursor'>
+                                <Typography variant="h6" color="inherit">
+                                    Postagens
+                                </Typography>
+                            </Box>
+                        </Link>
+
+                        <Link to="/temas" className="text-decorator-none">
+                            <Box mx={1} className='cursor'>
+                                <Typography variant="h6" color="inherit">
+                                    Temas
+                                </Typography>
+                            </Box>
+                        </Link>
+
+                        <Link to="/formularioTema" className="text-decorator-none">
+                            <Box mx={1} className='cursor'>
+                                <Typography variant="h6" color="inherit">
+                                    Cadastrar Temas
+                                </Typography>
+                            </Box>
+                        </Link>
+
+                        <Box mx={1} className='cursor' onClick={ goLogout }>
                             <Typography variant="h6" color="inherit">
-                                home
-                            </Typography>
-                        </Box>
-                        <Box mx={1} style={{ cursor: "pointer" }}>
-                            <Typography variant="h6" color="inherit">
-                                postagens
-                            </Typography>
-                        </Box>
-                        <Box mx={1} style={{ cursor: "pointer" }}>
-                        <Link to='/temas' className='text-decorator-none'>
-                            <Typography variant="h6" color="inherit">temas</Typography>
-                            </Link>
-                        </Box>
-                        <Box mx={1} style={{ cursor: "pointer" }}>
-                            <Typography variant="h6" color="inherit">
-                                cadastrar tema
-                            </Typography>
-                        </Box>
-                        <Box mx={1} style={{ cursor: "pointer" }}>
-                            <Typography variant="h6" color="inherit">
-                                logout
+                                Logout
                             </Typography>
                         </Box>
                     </Box>
@@ -46,4 +72,4 @@ function Navbar() {
     )
 }
 
-export default Navbar;
+export default NavBar

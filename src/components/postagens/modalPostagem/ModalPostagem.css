@@ -1,0 +1,14 @@
+.cursor{
+    cursor: pointer;
+}
+
+.btnModal{
+    border-color: white !important;
+    background-color: white !important;
+    border-radius: 30px !important;
+}
+
+.blur {
+    filter: blur(8px)!important;
+    -webkit-filter: blur(8px)!important;
+}

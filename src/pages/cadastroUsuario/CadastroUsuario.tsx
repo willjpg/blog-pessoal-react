@@ -93,7 +93,7 @@ function CadastroUsuario() {
                     id='nome' 
                     label='Nome' 
                     variant='outlined' 
-                    name='Nome' 
+                    name='nome' 
                     margin='normal' 
                     fullWidth />
 
@@ -103,7 +103,7 @@ function CadastroUsuario() {
                     id='usuario' 
                     label='Usuário' 
                     variant='outlined' 
-                    name='Usuário' 
+                    name='usuario' 
                     margin='normal' 
                     fullWidth />
 
@@ -113,7 +113,7 @@ function CadastroUsuario() {
                     id='foto'
                     label='Foto'
                     variant='outlined'
-                    name='Foto'
+                    name='foto'
                     margin='normal'
                     fullWidth />
 
@@ -123,7 +123,7 @@ function CadastroUsuario() {
                     id='senha' 
                     label='Senha' 
                     variant='outlined' 
-                    name='Senha' 
+                    name='senha' 
                     margin='normal' 
                     type='password' fullWidth />
 
@@ -133,7 +133,7 @@ function CadastroUsuario() {
                     id='confirmarSenha' 
                     label='Confirmar Senha' 
                     variant='outlined' 
-                    name='Confirmar Senha' 
+                    name='confirmarSenha' 
                     margin='normal' 
                     type='password' 
                     fullWidth />
@@ -144,7 +144,7 @@ function CadastroUsuario() {
                                 Cancelar
                             </Button>
                         </Link>
-                        <Button type='submit' variant='contained' color='primary'>
+                        <Button type='submit' variant='contained' color='primary' className='btnCancelar'>
                             Cadastrar
                         </Button>
                     </Box>

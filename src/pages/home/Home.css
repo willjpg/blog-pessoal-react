@@ -11,8 +11,13 @@
     border-color: white !important;
     background-color: #3F51B5;
     color: white !important;
+    border-radius: 30px !important;
 }
 
 .postagens{
     background-color: white;
+}
+.blur {
+    filter: blur(8px)!important;
+    -webkit-filter: blur(8px)!important;
 }
