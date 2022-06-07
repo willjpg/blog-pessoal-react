@@ -1,44 +1,83 @@
 import React from 'react';
-import InstagramIcon from '@material-ui/icons/Instagram';
-import FacebookIcon from '@material-ui/icons/Facebook';
-import LinkedInIcon from '@material-ui/icons/LinkedIn';
-import {Typography, Box, Grid } from '@material-ui/core';
+import { AppBar, Toolbar, Typography, Box } from '@material-ui/core';
+import { Link } from 'react-router-dom';
+import {useNavigate } from 'react-router-dom'
+import './Navbar.css'
+import { useSelector } from 'react-redux';
+import { TokenState } from '../../../store/tokens/tokenReducer';
+import { useDispatch } from "react-redux";
+import { addToken } from '../../../store/tokens/actions';
 
-function Footer() {
+function Navbar() {
+    const token = useSelector<TokenState, TokenState["tokens"]>(
+        (state) => state.tokens
+      );
+    let navigate = useNavigate();
+    const dispatch = useDispatch();
+    
+    function goLogout(){
+        dispatch(addToken(''));
+        alert("Usuário deslogado")
+        navigate('/login')
+    }
+
+    var navbarComponent;
+
+    if(token != ""){
+        navbarComponent = <AppBar position="static">
+        <Toolbar variant="dense">
+            <Box className='cursor'>
+                <Typography variant="h5" color="inherit">
+                    BlogPessoal
+                </Typography>
+            </Box>
+
+            <Box display="flex" justifyContent="start">
+                <Link to="/home" className="text-decorator-none">
+                    <Box mx={1} className='cursor'>
+                        <Typography variant="h6" color="inherit">
+                            home
+                        </Typography>
+                    </Box>
+                </Link>
+                <Link to="/posts" className="text-decorator-none">
+                    <Box mx={1} className='cursor'>
+                        <Typography variant="h6" color="inherit">
+                            postagens
+                        </Typography>
+                    </Box>
+                </Link>
+                <Link to="/temas" className="text-decorator-none">
+                <Box mx={1} className='cursor'>
+                    <Typography variant="h6" color="inherit">
+                        temas
+                    </Typography>
+                </Box>
+                </Link>
+                <Link to="/formularioTema" className="text-decorator-none">
+                <Box mx={1} className='cursor'>
+                    <Typography variant="h6" color="inherit">
+                        cadastrar tema
+                    </Typography>
+                </Box>
+                </Link>
+              
+                    <Box mx={1} className='cursor' onClick={goLogout}>
+                        <Typography variant="h6" color="inherit">
+                            logout
+                        </Typography>
+                    </Box>
+                
+            </Box>
+
+        </Toolbar>
+    </AppBar>
+    }
     return (
         <>
-            <Grid container direction="row" justifyContent="center" alignItems="center">
-                <Grid alignItems="center" item xs={12}>
-                    <Box style={{ backgroundColor: "#3F51B5", height: "120px" }}>
-                        <Box paddingTop={1} display="flex" alignItems="center" justifyContent="center">
-                            <Typography variant="h5" align="center" gutterBottom style={{ color: "white" }}>Siga-nos nas redes sociais </Typography>
-                        </Box>
-                        <Box display="flex" alignItems="center" justifyContent="center">
-                            <a href="https://www.facebook.com/generationbrasil" target="_blank">
-                                <FacebookIcon style={{ fontSize: 60, color: "white" }} />
-                            </a>
-                            <a href="https://www.instagram.com/imbecwill/" target="_blank">
-                                <InstagramIcon style={{ fontSize: 60, color: "white" }} />
-                            </a>
-                            <a href="https://www.linkedin.com/in/willfdasilva/" target="_blank">
-                                <LinkedInIcon style={{ fontSize: 60, color: "white" }} />
-                            </a>
-                        </Box>
-                    </Box>
-                    <Box style={{ backgroundColor: "#303F9F", height: "60px" }}>
-                        <Box paddingTop={1}>
-                            <Typography variant="subtitle2" align="center" gutterBottom style={{ color: "white" }} >© 2022 Copyright:</Typography>
-                        </Box>
-                        <Box>
-                            <a target="_blank" href="https://github.com/willjpg">
-                                <Typography variant="subtitle2" gutterBottom style={{ color: "white" }} align="center">github.com/willjpg/</Typography>
-                            </a>
-                        </Box>
-                    </Box>
-                </Grid>
-            </Grid>
+            {navbarComponent}
         </>
     )
 }
 
-export default Footer;
+export default Navbar;
