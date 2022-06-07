@@ -1,15 +1,20 @@
 import React, { useEffect } from 'react';
 import {Typography, Box, Grid, Button} from '@material-ui/core';
-import TabPostagem from '../../components/postagens/tabpostagem/TabPostagem';
-import './Home.css';
+import TabPostagem from '../../components/postagens/tabPostagem/TabPostagem';
+import { useSelector } from 'react-redux';
+import { TokenState } from '../../store/tokens/tokenReducer';
 import ModalPostagem from '../../components/postagens/modalPostagem/ModalPostagem';
 import { useNavigate } from 'react-router-dom';
-import useLocalStorage from 'react-use-localstorage';
+import './Home.css';
+
 
 function Home() {
     let navigate = useNavigate();
-    const [token, setToken] = useLocalStorage('token');
     
+    const token = useSelector<TokenState, TokenState["tokens"]>(
+        (state) => state.tokens
+    )
+
     useEffect(() => {
       if (token == "") {
           alert("Você precisa estar logado")
@@ -17,6 +22,7 @@ function Home() {
   
       }
   }, [token])
+
     return (
         <>
             <Grid container direction="row" justifyContent="center" alignItems="center" className='caixa'>
