@@ -6,6 +6,7 @@ import Postagem from '../../../models/Postagem';
 import { useSelector } from 'react-redux';
 import { TokenState } from '../../../store/tokens/tokenReducer';
 import './DeletarPostagem.css';
+import { toast } from 'react-toastify';
 
 function DeletarPost() {
   let navigate = useNavigate()
@@ -20,7 +21,15 @@ function DeletarPost() {
 
   useEffect(() => {
       if (token === "") {
-          alert("Você precisa estar logado")
+        toast.warn('Você precisa estar logado!', {
+          position: "top-right",
+          autoClose: 3000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          });
           navigate("/login")
       }
   }, [token])
@@ -46,7 +55,16 @@ function DeletarPost() {
               'Authorization': token
           }     
       });
-      alert('Postagem deletada com sucesso')
+      
+      toast.success('Postagem deletada com sucesso', {
+        position: "top-right",
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        });
   }
   
   function nao(){

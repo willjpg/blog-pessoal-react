@@ -6,6 +6,7 @@ import { buscaId, deleteId } from '../../../services/Service';
 import { useSelector } from 'react-redux';
 import { TokenState } from '../../../store/tokens/tokenReducer';
 import Tema from '../../../models/Tema';
+import { toast } from 'react-toastify';
 
 
 function DeletarTema() {
@@ -22,7 +23,15 @@ function DeletarTema() {
 
     useEffect(() => {
         if (token === "") {
-            alert("Você precisa estar logado")
+          toast.warn('Você precisa estar logado!', {
+            position: "top-right",
+            autoClose: 3000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            });
             navigate("/login")
         }
     }, [token])

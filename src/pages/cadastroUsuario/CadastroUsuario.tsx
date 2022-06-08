@@ -5,6 +5,7 @@ import { cadastroUsuario } from '../../services/Service';
 import { Grid, Box, Typography, Button, TextField } from '@material-ui/core';
 import { Link } from 'react-router-dom';
 import './CadastroUsuario.css';
+import { toast } from 'react-toastify';
 
 function CadastroUsuario() {
 
@@ -56,14 +57,30 @@ function CadastroUsuario() {
             //Tenta executar o cadastro
             try {
                 await cadastroUsuario(`/usuarios/cadastrar`, user, setUserResult)
-                alert("Usuário cadastrado com sucesso")
+                    toast.success('Usuário cadastrado com sucesso', {
+                    position: "top-right",
+                    autoClose: 2000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    });
 
                 //Se houver erro, pegue o Erro e retorna uma msg
             } catch (error) {
                 console.log(`Error: ${error}`)
 
                 //Pode modificar a msg de acordo com o erro 
-                alert("Usuário já existente")
+                toast.warn('Usuário já existente', {
+                    position: "top-right",
+                    autoClose: 5000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    });
             }
 
         } else {

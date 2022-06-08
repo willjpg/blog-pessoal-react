@@ -6,6 +6,7 @@ import { api, login } from '../../services/Service';
 import UserLogin from '../../models/UserLogin';
 import './Login.css';
 import { addToken } from '../../store/tokens/actions';
+import { toast } from 'react-toastify';
 
 
 function Login() {
@@ -44,10 +45,26 @@ function Login() {
             try{
                 //O token é gravado no locaStorange
                 await login(`/usuarios/logar`, userLogin, setToken)
-                alert('Usuário logado com sucesso!');
+                toast.success('Logado com sucesso', {
+                    position: "top-right",
+                    autoClose: 2000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    });
                 
             }catch(error){
-                alert('Dados do usuário inconsistentes. Erro ao logar!');
+                toast.error('Dados do usuário inconsistentes', {
+                    position: "top-left",
+                    autoClose: 2000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    });
             }
         }
 
