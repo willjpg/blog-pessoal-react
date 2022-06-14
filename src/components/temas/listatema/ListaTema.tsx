@@ -10,11 +10,12 @@ import { TokenState } from '../../../store/tokens/tokenReducer';
 import { toast } from 'react-toastify';
 
 function ListaTema() {
+  let navigate = useNavigate();
   const [temas, setTemas]= useState<Tema[]>([])
   const token = useSelector<TokenState, TokenState["tokens"]>(
     (state)=>state.tokens
   );
-  let navigate = useNavigate();
+  
 
   useEffect(()=>{
     if(token == ''){
@@ -32,9 +33,9 @@ function ListaTema() {
   },[token])
 
   async function getTema(){
-    await busca("/tema", setTemas,{
+    await busca("/temas", setTemas,{
       headers:{
-      'Authirization': token
+      'Authorization': token
       }  
     })
   }

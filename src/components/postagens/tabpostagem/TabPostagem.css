@@ -1,3 +1,8 @@
 .titulo{
     font-weight: bold;
+    
+ }
+ .color{
+
+    background-color: rgb(20, 20, 20) !important;
  }

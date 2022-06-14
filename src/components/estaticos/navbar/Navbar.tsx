@@ -33,17 +33,17 @@ function NavBar() {
 
     if(token != ""){//so aparece a navbar se tiver o token
         navbarComponent = <AppBar position="static">
-                <Toolbar variant="dense">
+                <Toolbar variant="dense" className='caixa ali'>
                     <Box className='cursor'>
-                        <Typography variant="h5" color="inherit">
-                            BlogPessoal
+                        <Typography className='font' variant="h5" color="inherit">
+                            Blog
                         </Typography>
                     </Box>
 
-                    <Box display="flex" justifyContent="start">
+                    <Box display="flex" justifyContent="start" className='log'>
                         <Link to="/home" className="text-decorator-none">
                             <Box mx={1} className='cursor'>
-                                <Typography variant="h6" color="inherit">
+                                <Typography className='font' variant="h6" color="inherit">
                                     Home
                                 </Typography>
                             </Box>
@@ -51,7 +51,7 @@ function NavBar() {
 
                         <Link to="/posts" className="text-decorator-none">
                             <Box mx={1} className='cursor'>
-                                <Typography variant="h6" color="inherit">
+                                <Typography className='font' variant="h6" color="inherit">
                                     Postagens
                                 </Typography>
                             </Box>
@@ -59,7 +59,7 @@ function NavBar() {
 
                         <Link to="/temas" className="text-decorator-none">
                             <Box mx={1} className='cursor'>
-                                <Typography variant="h6" color="inherit">
+                                <Typography className='font' variant="h6" color="inherit">
                                     Temas
                                 </Typography>
                             </Box>
@@ -67,14 +67,14 @@ function NavBar() {
 
                         <Link to="/formularioTema" className="text-decorator-none">
                             <Box mx={1} className='cursor'>
-                                <Typography variant="h6" color="inherit">
+                                <Typography className='font' variant="h6" color="inherit">
                                     Cadastrar Temas
                                 </Typography>
                             </Box>
                         </Link>
 
                         <Box mx={1} className='cursor' onClick={ goLogout }>
-                            <Typography variant="h6" color="inherit">
+                            <Typography className='font' variant="h6" color="inherit">
                                 Logout
                             </Typography>
                         </Box>

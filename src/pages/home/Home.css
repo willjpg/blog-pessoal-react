@@ -1,10 +1,19 @@
-.caixa{
-    background-color: #3F51B5;
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+.bemv{
+    font-size: 1.5rem!important;
+    color: white !important;
+   font-weight: bold !important;
+   margin-top: 30px !important;
+   margin-bottom: 50px!important;
+   font-family: 'Montserrat'!important; 
 }
 
 .titulo{
    color: white !important;
    font-weight: bold !important;
+   font-size: 3.5rem!important;
+   justify-content: left!important;
+
 }
 
 .botao{
@@ -21,3 +30,15 @@
     filter: blur(8px)!important;
     -webkit-filter: blur(8px)!important;
 }
+
+ .span {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: crimson;
+        font-size: 3.5rem;
+        line-height: 4.5rem;
+        font-weight: 900;
+        margin-top: 2.5rem;
+    
+      
+ } 
