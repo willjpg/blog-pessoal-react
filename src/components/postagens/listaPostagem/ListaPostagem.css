@@ -1,0 +1,17 @@
+.text-decorator-none{
+    text-decoration: none;
+}
+.botao{
+    background-color: #660101!important;
+    text-decoration: none;
+    color: black !important;
+    
+    border-radius: 30px !important;
+}
+.botao2 {
+    background-color: #1d1d1d!important;
+    text-decoration: none;
+    
+    
+    border-radius: 30px !important;
+}
