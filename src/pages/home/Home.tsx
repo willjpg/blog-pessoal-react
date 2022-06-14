@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import {Typography, Box, Grid, Button} from '@material-ui/core';
-import TabPostagem from '../../components/postagens/tabPostagem/TabPostagem';
+import TabPostagem from '../../components/postagens/tabpostagem/TabPostagem';
 import { useSelector } from 'react-redux';
 import { TokenState } from '../../store/tokens/tokenReducer';
 import ModalPostagem from '../../components/postagens/modalPostagem/ModalPostagem';
