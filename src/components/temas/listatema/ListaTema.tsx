@@ -47,7 +47,7 @@ function ListaTema() {
   return (
     <>
     {
-      temas.map(tema =>(
+      temas.map((tema) =>(
       <Box m={2} >
         <Card variant="outlined">
           <CardContent>
@@ -79,8 +79,7 @@ function ListaTema() {
           </CardActions>
         </Card>
       </Box>
-      ))
-      }
+      ))}
     </>
   );
 }
