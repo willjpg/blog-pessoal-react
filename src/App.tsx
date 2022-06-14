@@ -16,7 +16,7 @@ import store from './store/store';
 import './App.css';
 import {ToastContainer} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import ListaTema from './components/temas/listatema/ListaTema';
+import Temas from './components/temas/listatema/ListaTema';
 
 function App() {
   return (
@@ -35,7 +35,7 @@ function App() {
 
           <Route path="/cadastro" element={<CadastroUsuario />} />
 
-          <Route path="/temas" element={<ListaTema />} />
+          <Route path="/temas" element={<Temas />} />
 
           <Route path="/posts" element={<ListaPostagem />} />
 
