@@ -5,7 +5,7 @@ import Footer from './components/estaticos/footer/Footer';
 import CadastroUsuario from './pages/cadastroUsuario/CadastroUsuario';
 import Home from './pages/home/Home';
 import Login from './pages/login/Login';
-import ListaTema from './components/temas/listaTema/ListaTema';
+
 import ListaPostagem from './components/postagens/listaPostagem/ListaPostagem';
 import CadastroPost from './components/postagens/cadastroPost/CadastroPost';
 import CadastroTema from './components/temas/cadastroTema/CadastroTema';
@@ -16,6 +16,7 @@ import store from './store/store';
 import './App.css';
 import {ToastContainer} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import ListaTema from './components/temas/listatema/ListaTema';
 
 function App() {
   return (
