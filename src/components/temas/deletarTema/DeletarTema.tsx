@@ -52,12 +52,20 @@ function DeletarTema() {
 
     function sim(){
         navigate('/temas')
-        deleteId(`/tema/${id}`,{
+        deleteId(`/temas/${id}`,{
             headers: {
                 'Authorization': token
             }     
         });
-        alert('Tema deletado com sucesso')
+        toast.success('Tema deletado com sucesso', {
+          position: "top-right",
+          autoClose: 2000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          });
     }
     
     function nao(){

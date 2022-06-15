@@ -50,7 +50,7 @@ function DeletarPost() {
 
   function sim(){
       navigate('/posts')
-      deleteId(`/post/${id}`,{
+      deleteId(`/postagens/${id}`,{
           headers: {
               'Authorization': token
           }     
