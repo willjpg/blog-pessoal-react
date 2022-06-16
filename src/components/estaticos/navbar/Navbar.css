@@ -16,17 +16,13 @@
 .caixa{
     background-color: rgb(27, 27, 27);
 }
-
-.ali{
     
-}
+
 .log{
     cursor: pointer;
-    margin: 20px;
     display: flex;
-    justify-content: flex-end !important;
-    font-size: 15px;
-    
+    justify-content: flex-end;
+    align-items: flex-end;
     
 
     

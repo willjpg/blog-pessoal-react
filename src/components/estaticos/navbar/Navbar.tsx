@@ -40,7 +40,7 @@ function NavBar() {
                         </Typography>
                     </Box>
 
-                    <Box display="flex" justifyContent="start" >
+                    <Box display="flex" className='log'>
                         <Link to="/home" className="text-decorator-none">
                             <Box mx={1} className='cursor'>
                                 <Typography className='font' variant="h6" color="inherit">
@@ -72,15 +72,15 @@ function NavBar() {
                                 </Typography>
                             </Box>
                         </Link>
-
+                            <Box mx={1}  onClick={ goLogout } className='log'>
+                                <Typography className='font' variant="h6" color="inherit">
+                                Logout
+                                </Typography>
+                            </Box>
                        
                     </Box>
                     
-                    <Box mx={1}  onClick={ goLogout } className='log'>
-                            <Typography className='font' variant="h6" color="inherit">
-                                Logout
-                            </Typography>
-                        </Box>
+                    
                         
                 </Toolbar>
             </AppBar>
