@@ -18,14 +18,15 @@
 }
 
 .ali{
-    height: 70px;
-    padding-left: 90px;
-   
+    
 }
 .log{
-    padding-left: 90px;
-    align-items: stretch;
+    cursor: pointer;
+    margin: 20px;
+    display: flex;
+    justify-content: flex-end !important;
     font-size: 15px;
+    
     
 
     

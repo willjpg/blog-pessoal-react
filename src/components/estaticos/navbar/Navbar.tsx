@@ -40,7 +40,7 @@ function NavBar() {
                         </Typography>
                     </Box>
 
-                    <Box display="flex" justifyContent="start" className='log'>
+                    <Box display="flex" justifyContent="start" >
                         <Link to="/home" className="text-decorator-none">
                             <Box mx={1} className='cursor'>
                                 <Typography className='font' variant="h6" color="inherit">
@@ -49,13 +49,13 @@ function NavBar() {
                             </Box>
                         </Link>
 
-                        <Link to="/posts" className="text-decorator-none">
+                        {/* <Link to="/posts" className="text-decorator-none">
                             <Box mx={1} className='cursor'>
                                 <Typography className='font' variant="h6" color="inherit">
                                     Postagens
                                 </Typography>
                             </Box>
-                        </Link>
+                        </Link> */}
 
                         <Link to="/temas" className="text-decorator-none">
                             <Box mx={1} className='cursor'>
@@ -73,13 +73,15 @@ function NavBar() {
                             </Box>
                         </Link>
 
-                        <Box mx={1} className='cursor' onClick={ goLogout }>
+                       
+                    </Box>
+                    
+                    <Box mx={1}  onClick={ goLogout } className='log'>
                             <Typography className='font' variant="h6" color="inherit">
                                 Logout
                             </Typography>
                         </Box>
-                    </Box>
-
+                        
                 </Toolbar>
             </AppBar>
     }

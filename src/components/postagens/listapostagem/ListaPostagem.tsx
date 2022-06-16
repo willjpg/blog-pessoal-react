@@ -8,6 +8,8 @@ import { useSelector } from 'react-redux';
 import { TokenState } from '../../../store/tokens/tokenReducer';
 import './ListaPostagem.css';
 import { toast } from 'react-toastify';
+import DeleteIcon from '@material-ui/icons/Delete';
+import BorderColorIcon from '@material-ui/icons/BorderColor';
 
 
 
@@ -57,9 +59,6 @@ function ListaPostagem() {
           <Box m={2} >
             <Card variant="outlined">
               <CardContent>
-                <Typography color="textSecondary" gutterBottom>
-                  Postagens
-                </Typography>
                 <Typography variant="h5" component="h2">
                   {post.titulo}
                 </Typography>
@@ -71,19 +70,22 @@ function ListaPostagem() {
                 </Typography>
               </CardContent>
               <CardActions>
-                <Box display="flex" justifyContent="center" mb={1.5}>
+                <Box display="flex" justifyContent="right" mb={1.5}>
 
                   <Link to={`/formularioPostagem/${post.id}`} className="text-decorator-none" >
-                    <Box mx={1}>
-                      <Button variant="contained" className="marginLeft botao2" size='small' color="primary" >
+                    <Box mx={1}  alignContent={'right'}>
+                      
+                      <Button ><BorderColorIcon>
                         atualizar
+                        </BorderColorIcon>
                       </Button>
                     </Box>
                   </Link>
                   <Link to={`/deletarPostagem/${post.id}`} className="text-decorator-none">
                     <Box mx={1}>
-                      <Button variant="contained" size='small' className="botao">
+                      <Button ><DeleteIcon>
                         deletar
+                        </DeleteIcon>
                       </Button>
                     </Box>
                   </Link>

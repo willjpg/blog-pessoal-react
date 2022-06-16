@@ -1,5 +1,6 @@
 .text-decorator-none{
     text-decoration: none;
+    align-content: right;
 }
 .botao{
     background-color: #660101!important;
