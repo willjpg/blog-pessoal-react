@@ -57,7 +57,7 @@ function ListaPostagem() {
       {
         posts.map(post => (
           <Box m={2} >
-            <Card variant="outlined">
+            <Card variant="outlined" >
               <CardContent>
                 <Typography variant="h5" component="h2">
                   {post.titulo}
@@ -69,8 +69,8 @@ function ListaPostagem() {
                   {post.tema?.descricao}
                 </Typography>
               </CardContent>
-              <CardActions>
-                <Box display="flex" justifyContent="right" mb={1.5}>
+              <CardActions >
+                <Box display="flex"  mb={1.5}>
 
                   <Link to={`/formularioPostagem/${post.id}`} className="text-decorator-none" >
                     <Box mx={1}  alignContent={'right'}>
@@ -81,7 +81,7 @@ function ListaPostagem() {
                       </Button>
                     </Box>
                   </Link>
-                  <Link to={`/deletarPostagem/${post.id}`} className="text-decorator-none">
+                  <Link to={`/deletarPostagem/${post.id}`} className="text-decorator-none" >
                     <Box mx={1}>
                       <Button ><DeleteIcon>
                         deletar

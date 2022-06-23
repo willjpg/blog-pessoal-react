@@ -8,6 +8,8 @@ import { busca } from '../../../services/Service';
 import { useSelector } from 'react-redux';
 import { TokenState } from '../../../store/tokens/tokenReducer';
 import { toast } from 'react-toastify';
+import DeleteIcon from '@material-ui/icons/Delete';
+import BorderColorIcon from '@material-ui/icons/BorderColor';
 
 function ListaTema() {
   let navigate = useNavigate();
@@ -64,14 +66,18 @@ function ListaTema() {
               <Link to={`/formularioTema/${tema.id}`} className="text-decorator-none">
                 <Box mx={1}>
                   <Button variant="contained" className="marginLeft" size='small' color="primary" >
-                    atualizar
+                  <BorderColorIcon>
+                        atualizar
+                    </BorderColorIcon>
                   </Button>
                 </Box>
               </Link>
               <Link to={`/deletarTema/${tema.id}`} className="text-decorator-none">
                 <Box mx={1}>
                   <Button variant="contained" size='small' color="secondary">
-                    deletar
+                  <DeleteIcon>
+                        deletar
+                  </DeleteIcon>
                   </Button>
                 </Box>
               </Link>

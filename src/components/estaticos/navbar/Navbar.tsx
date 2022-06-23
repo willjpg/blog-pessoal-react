@@ -6,7 +6,7 @@ import { TokenState } from '../../../store/tokens/tokenReducer'
 import './Navbar.css'
 import { addToken } from '../../../store/tokens/actions'
 import { toast } from 'react-toastify'
-
+import LogoutIcon from '@mui/icons-material/Logout';
 
 function NavBar() {
 
@@ -33,10 +33,10 @@ function NavBar() {
 
     if(token != ""){//so aparece a navbar se tiver o token
         navbarComponent = <AppBar position="static">
-                <Toolbar variant="dense" className='caixa ali'>
+                <Toolbar variant="dense" className='caixa'>
                     <Box className='cursor'>
                         <Typography className='font' variant="h5" color="inherit">
-                            Blog
+                            WillJPG
                         </Typography>
                     </Box>
 
@@ -72,14 +72,14 @@ function NavBar() {
                                 </Typography>
                             </Box>
                         </Link>
-                            <Box mx={1}  onClick={ goLogout } className='log'>
-                                <Typography className='font' variant="h6" color="inherit">
-                                Logout
-                                </Typography>
-                            </Box>
+                            
                        
                     </Box>
-                    
+                    <Box mx={1}  onClick={ goLogout } className='log'>
+                                <Typography className='font' variant="h6" color="inherit">
+                                <LogoutIcon/>
+                                </Typography>
+                            </Box>
                     
                         
                 </Toolbar>

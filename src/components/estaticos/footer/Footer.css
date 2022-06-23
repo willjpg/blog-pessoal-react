@@ -1,10 +1,10 @@
 .box1{
-    background-color: #3F51B5;
+    background-color: rgb(27, 27, 27) !important;
     height: 120px;
 }
 
 .box2{
-    background-color: #303F9F;
+    background-color: rgb(41, 41, 41) !important;
     height: 60px;
 }
 

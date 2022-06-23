@@ -1,5 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300&display=swap');
 
+Toolbar{
+    -webkit-font-smoothing: antialiased;
+    
+}
+
+
 .cursor{
     cursor: pointer;
     color: white;
@@ -15,14 +21,16 @@
 }
 .caixa{
     background-color: rgb(27, 27, 27);
+    justify-content: space-between;
+    
 }
     
 
 .log{
-    cursor: pointer;
     display: flex;
-    justify-content: flex-end;
-    align-items: flex-end;
+    cursor: pointer;
+    justify-items: center;
+    
     
 
     
